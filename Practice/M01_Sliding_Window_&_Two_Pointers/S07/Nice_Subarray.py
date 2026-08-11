@@ -1,7 +1,5 @@
 #LeetCode 1763: Longest Nice Substring
 from typing import List
-
-
 class Solution:
     def longestNiceSubstring(self, s: str) -> str:
         def is_nice(sub):
