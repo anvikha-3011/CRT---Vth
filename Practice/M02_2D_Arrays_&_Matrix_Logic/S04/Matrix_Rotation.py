@@ -1,4 +1,4 @@
-\#Leetcode 48: Rotate Image
+#Leetcode 48: Rotate Image
 #Solution using two loops
 from typing import List
 class Solution:
