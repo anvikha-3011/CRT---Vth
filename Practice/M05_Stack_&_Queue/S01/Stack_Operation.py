@@ -66,5 +66,17 @@ class Stack_LL:
     def pop(self):
         if self.is_empty():
             return "Stack is empty"
-
-    
+    def size(self):
+        temp = self.top
+        count = 0
+        while temp:
+            count += 1
+            temp = temp.next
+        return count
+st_ll = Stack_LL()
+print(st_ll.is_empty()) 
+st_ll.push(10)
+st_ll.push(20)  
+st_ll.push(30)
+print(st_ll.is_empty())
+print(st_ll.size())
