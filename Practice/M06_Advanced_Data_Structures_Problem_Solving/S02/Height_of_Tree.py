@@ -13,7 +13,44 @@ root.left.right = Node(5)
 
 def Height(root):
     if root is None:
-        return 0
-    left_height = Height(root.left)
-    right_height = Height(root.right)
-    return max(left_height, right_height) + 1
+        return -1
+    l = Height(root.left)
+    r = Height(root.right)
+    return 1 + max(l, r)
+
+def is_Balanced(root):
+    if root is None:
+        return True
+    l = Height(root.left)
+    r = Height(root.right)
+    if abs(l - r) <= 1 and is_Balanced(root.left) and is_Balanced(root.right):
+        return True
+    return False
+print(is_Balanced(root))
+
+#LeetCode - 100 Same Tree
+class Solution:
+
+  def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
+    if not p and not q:
+      return True
+
+    if not p or not q or p.val != q.val:
+      return False
+
+    return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
+
+#LeetCode - 101 Symmetric Tree
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+        return 
+    
+        def isMirror(t1, t2):
+        if not t1 and not t2:
+            return True
+        if not t1 or not t2:
+            return False
+        return (t1.val == t2.val) and isMirror(t1.left, t2.right) and isMirror(t1.right, t2.left)
+    
+        return isMirror(root.left, root.right)      
